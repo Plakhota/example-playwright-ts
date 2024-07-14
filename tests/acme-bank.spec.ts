@@ -25,7 +25,9 @@ test.beforeAll(async() => {
 test.describe('ACME Bank', () => {
     let eyes: Eyes;
     test.beforeEach(async ({ page }) => {
-        eyes = new Eyes(Runner, Config);
+        eyes = new Eyes(Runner, Config);                
+        eyes.setLogHandler(new ConsoleLogHandler(true));
+
 
         // Start Applitools Visual AI Test
         // Args: Playwright Page, App Name, Test Name, Viewport Size for local driver
